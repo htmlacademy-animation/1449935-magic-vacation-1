@@ -17,6 +17,7 @@
   height: 4rem;
   color: $c-dark;
   border-radius: 50%;
+  transition: all 0.35s ease;
 
   @media (max-width: $tablet) and (orientation: portrait) {
     display: none;
@@ -35,6 +36,7 @@
     background-color: $c-light;
     border: 2px solid $c-light;
     z-index: -1;
+    transition: all 0.35s ease;
   }
 
   svg {
@@ -46,11 +48,24 @@
 
   &:hover,
   .social-block--active & {
-    color: $c-purple;
+    color: $c-light;
+    transition-duration: 0.3s;
+
+    &:hover {
+      color: $c-dark;
+    }
 
     &::before {
+      background-color: $c-purple;
+      border-color: $c-purple;
+    }
+
+    &:hover::before {
       width: 112.5%;
       height: 112.5%;
+      background-color: $c-light;
+      border-color: $c-light;
+      transition-duration: 0.3s;
     }
   }
 
@@ -89,6 +104,7 @@
   margin-top: 1.5rem;
   opacity: 0;
   pointer-events: none;
+  transition: opacity 0.3s ease;
 
   @media (min-width: $stop-scaling) {
     margin-top: 15px;
@@ -140,6 +156,7 @@
   .social-block--active & {
     opacity: 1;
     pointer-events: auto;
+    transition: none;
   }
 
   li {
@@ -168,6 +185,15 @@
   color: $c-light;
   border: 2px solid transparent;
   border-radius: 50%;
+  transform: translateY(50%);
+  opacity: 0;
+  transition-delay: 0.3s;
+
+  .social-block--active & {
+    transition: transform 0.5s ease, opacity 0.5s linear, color 0.3s linear;
+    transform: translateY(0);
+    opacity: 1;
+  }
 
   @media (min-width: $stop-scaling) {
     width: 40px;
@@ -219,6 +245,10 @@
   }
 
   &--insta {
+    .social-block--active & {
+      transition-delay: 0.15s, 0.15s, 0s;
+    }
+
     svg {
       width: 1.5rem;
       height: 1.5rem;
@@ -231,6 +261,10 @@
   }
 
   &--vk {
+    .social-block--active & {
+      transition-delay: 0.3s, 0.3s, 0s;
+    }
+
     svg {
       width: 1.7rem;
       height: 1rem;
