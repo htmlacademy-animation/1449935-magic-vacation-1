@@ -1,11 +1,33 @@
+$appearance-delay: 0.2s;
+
 .social-block {
   position: relative;
+  opacity: 0;
+
+  .loaded & {
+    transition: opacity 0s linear $appearance-delay;
+    opacity: 1;
+  }
 
   &:hover {
     .social-block__list {
       opacity: 1;
       pointer-events: auto;
     }
+  }
+}
+
+@keyframes toggler-appearance {
+  0% {
+    transform: translate(-50%, -50%) scale(0);
+  }
+
+  80% {
+    transform: translate(-50%, -50%) scale(1.125);
+  }
+
+  100% {
+    transform: translate(-50%, -50%) scale(1);
   }
 }
 
@@ -37,6 +59,10 @@
     border: 2px solid $c-light;
     z-index: -1;
     transition: all 0.35s ease;
+
+    .loaded & {
+      animation: 0.35s ease-in $appearance-delay toggler-appearance;
+    }
   }
 
   svg {
