@@ -8,6 +8,7 @@ export default class FullPageScroll {
 
     this.screenElements = document.querySelectorAll(`.screen:not(.screen--result)`);
     this.menuElements = document.querySelectorAll(`.page-header__menu .js-menu-link`);
+    this.slidingOverlay = document.querySelector(`.sliding-overlay`);
 
     this.activeScreen = 0;
     this.onScrollHandler = this.onScroll.bind(this);
@@ -52,14 +53,62 @@ export default class FullPageScroll {
   }
 
   changeVisibilityDisplay() {
-    this.screenElements.forEach((screen) => {
-      screen.classList.add(`screen--hidden`);
-      screen.classList.remove(`active`);
-    });
-    this.screenElements[this.activeScreen].classList.remove(`screen--hidden`);
-    setTimeout(() => {
-      this.screenElements[this.activeScreen].classList.add(`active`);
-    }, 100);
+    const isSlideupTransitionFromStory = () => {
+      const startScreen = Array.from(this.screenElements).find(
+          (it) => it.classList.contains(`active`)
+      );
+
+      const endScreen = this.screenElements[this.activeScreen];
+
+      return (
+        startScreen &&
+        startScreen.id === `story` &&
+        [`prizes`, `rules`, `game`].includes(endScreen.id)
+      );
+    };
+
+    const runSlideupTransition = () => {
+      setTimeout(() => {
+        this.screenElements.forEach((screen) => {
+          screen.classList.add(`screen--hidden`);
+          screen.classList.remove(`active`);
+        });
+
+        this.screenElements[this.activeScreen].classList.remove(`screen--hidden`);
+
+        setTimeout(() => {
+          this.screenElements[this.activeScreen].classList.add(`active`);
+        }, 100);
+      }, 350);
+
+
+      if (this.slidingOverlay) {
+        this.slidingOverlay.classList.add(`sliding-overlay--visible`);
+
+        setTimeout(() => {
+          this.slidingOverlay.classList.remove(`sliding-overlay--visible`);
+        }, 400);
+      }
+    };
+
+    const runStandardTransition = () => {
+      this.screenElements.forEach((screen) => {
+        screen.classList.add(`screen--hidden`);
+        screen.classList.remove(`active`);
+      });
+
+      this.screenElements[this.activeScreen].classList.remove(`screen--hidden`);
+
+      setTimeout(() => {
+        this.screenElements[this.activeScreen].classList.add(`active`);
+      }, 100);
+    };
+
+    if (isSlideupTransitionFromStory()) {
+      runSlideupTransition();
+    } else {
+      runStandardTransition();
+    }
   }
 
   changeActiveMenuItem() {
