@@ -11,9 +11,11 @@ import FullPageScroll from './modules/full-page-scroll';
 import screenIntro from './modules/screen-intro';
 import screenStory from './modules/screen-story';
 import screenPrizes from './modules/screen-prizes';
+import screenRules from './modules/screen-rules';
 
 // init modules
 screenPrizes();
+screenRules();
 mobileHeight();
 slider();
 menu();
