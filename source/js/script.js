@@ -15,6 +15,7 @@ import screenRules from './modules/screen-rules';
 import screenGame from './modules/screen-game';
 
 // init modules
+screenIntro();
 screenPrizes();
 screenRules();
 screenGame();
@@ -26,7 +27,6 @@ chat();
 result();
 form();
 social();
-screenIntro();
 screenStory();
 
 const fullPageScroll = new FullPageScroll();

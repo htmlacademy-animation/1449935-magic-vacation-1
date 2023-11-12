@@ -1,4 +1,5 @@
 import {LetterByLetterAnimation} from "./letter-by-letter-animation";
+import {setupPageTitleAnimation} from './setup-page-title-animation';
 
 export default () => {
   const titleAnimation = new LetterByLetterAnimation(
@@ -8,9 +9,7 @@ export default () => {
       `transform`
   );
 
-  setTimeout(() => {
-    titleAnimation.start();
-  }, 500);
+  setupPageTitleAnimation(`.screen--intro`, titleAnimation, 500);
 
   const dateAnimation = new LetterByLetterAnimation(
       `.intro__date`,
@@ -19,7 +18,5 @@ export default () => {
       `transform`,
   );
 
-  setTimeout(() => {
-    dateAnimation.start();
-  }, 2000);
+  setupPageTitleAnimation(`.screen--intro`, dateAnimation, 1200);
 };

@@ -4,8 +4,9 @@ import {LetterByLetterAnimation} from './letter-by-letter-animation';
 /**
  * @param {string} page
  * @param {LetterByLetterAnimation} animation
+ * @param {number} delay animation delay in ms
  */
-export const setupPageTitleAnimation = (page, animation) => {
+export const setupPageTitleAnimation = (page, animation, delay) => {
   const pageElement = document.querySelector(page);
   let prevClassName = ``;
 
@@ -19,7 +20,14 @@ export const setupPageTitleAnimation = (page, animation) => {
         }
 
         if (mutation.target.classList.contains(`active`)) {
-          animation.start();
+          // eslint-disable-next-line eqeqeq
+          if (delay == undefined) {
+            animation.start();
+          } else {
+            setTimeout(() => {
+              animation.start();
+            }, delay);
+          }
         } else {
           animation.stop();
         }
