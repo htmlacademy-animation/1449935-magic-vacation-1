@@ -12,10 +12,12 @@ import screenIntro from './modules/screen-intro';
 import screenStory from './modules/screen-story';
 import screenPrizes from './modules/screen-prizes';
 import screenRules from './modules/screen-rules';
+import screenGame from './modules/screen-game';
 
 // init modules
 screenPrizes();
 screenRules();
+screenGame();
 mobileHeight();
 slider();
 menu();
