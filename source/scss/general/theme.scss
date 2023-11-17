@@ -1,0 +1,19 @@
+body {
+  --c-menu-bg: rgb(94, 71, 138);
+  --c-menu-accent: rgb(159, 128, 224);
+
+  &.theme-purple {
+    --c-menu-bg: rgb(159, 128, 224);
+    --c-menu-accent: rgb(94, 71, 138);
+  }
+
+  &.theme-blue {
+    --c-menu-bg: rgb(66, 117, 233);
+    --c-menu-accent: rgb(162, 207, 252);
+  }
+
+  &.theme-cyan {
+    --c-menu-bg: rgb(146, 184, 224);
+    --c-menu-accent: rgb(66, 117, 233);
+  }
+}

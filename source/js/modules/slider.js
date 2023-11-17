@@ -20,6 +20,41 @@ export default () => {
     }
   };
 
+  const clearSliderThemes = () => {
+    document.body.classList.remove(`theme-purple`);
+    document.body.classList.remove(`theme-blue`);
+    document.body.classList.remove(`theme-cyan`);
+  };
+
+  const updateTheme = () => {
+    const slideNumber = Math.floor(storySlider.activeIndex / 2);
+
+    clearSliderThemes();
+
+    switch (slideNumber) {
+      case 0:
+        document.body.classList.add(`theme-purple`);
+        break;
+      case 1:
+        document.body.classList.add(`theme-blue`);
+        break;
+      case 2:
+        document.body.classList.add(`theme-cyan`);
+        break;
+      case 3:
+        document.body.classList.add(`theme-purple`);
+        break;
+    }
+  };
+
+  document.body.addEventListener(`screenChanged`, (evt) => {
+    if (evt.detail.screenName !== `story`) {
+      clearSliderThemes();
+    } else {
+      updateTheme();
+    }
+  });
+
   const setSlider = function () {
     if (((window.innerWidth / window.innerHeight) < 1) || window.innerWidth < 769) {
       storySlider = new Swiper(`.js-slider`, {
@@ -43,6 +78,7 @@ export default () => {
             }
 
             updateControlsStyles();
+            updateTheme();
           },
           resize: () => {
             storySlider.update();
@@ -79,6 +115,7 @@ export default () => {
             }
 
             updateControlsStyles();
+            updateTheme();
           },
           resize: () => {
             storySlider.update();
@@ -90,6 +127,7 @@ export default () => {
     }
 
     updateControlsStyles();
+    updateTheme();
   };
 
   window.addEventListener(`resize`, function () {
