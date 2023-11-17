@@ -52,6 +52,220 @@
     object-fit: cover;
     object-position: center;
   }
+
+  .result__img-leaf-blue-left {
+    position: absolute;
+    transform: translate3d(-13.5%, -16%, 0) scale(0.194) rotate(29deg);
+    height: auto;
+    opacity: 0;
+
+    .screen--show & {
+      animation: left-leaf 2s linear 0.5s 1 forwards;
+    }
+  }
+
+  .result__img-leaf-blue-right {
+    position: absolute;
+    transform: translate3d(8.7%, -21.5%, 0) scale(0.194) rotate(-8deg);
+    height: auto;
+    opacity: 0;
+
+    .screen--show & {
+      animation: right-leaf 2s linear 0.5s 1 forwards;
+    }
+  }
+
+  .result__img-leaf-green {
+    position: absolute;
+    left: 47.5%;
+    top: 55.3%;
+    width: 23.5%;
+    height: auto;
+    opacity: 0;
+    transform: translate3d(6%, -4%, 0) rotate(-14deg);
+    transform-origin: left center;
+
+    .screen--show & {
+      animation: green-leaf 2s linear 0.75s 1 forwards;
+    }
+  }
+
+  .result__img-suitecase {
+    position: absolute;
+    transform: translate3d(-3.5%, 0%, 0) scale(0.03);
+    height: auto;
+
+    .screen--show & {
+      animation: suitecase 1s cubic-bezier(0, 0, 0.49, 1.38) 0s 1 forwards;
+    }
+  }
+
+  .result__img-flamingo {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    width: 18%;
+    height: auto;
+    opacity: 0;
+    transform: translate3d(-88.5%, 88%, 0) rotate(-15deg);
+    transform-origin: 56% 59%;
+
+    .screen--show & {
+      animation: flamingo 1s ease 0s 1 forwards, flamingo-oscillation 2s linear 1s infinite;
+    }
+  }
+
+  .result__image-aspect {
+    position: relative;
+    height: 100%;
+    aspect-ratio: 36/19;
+    outline-offset: -4px;
+    // background-image: url(../../img/result2.png);
+    background-size: cover;
+  }
+}
+
+@keyframes left-leaf {
+  from {
+    opacity: 0;
+    transform: translate3d(-13.5%, -16%, 0) scale(0.194) rotate(29deg);
+  }
+
+  16% {
+    opacity: 1;
+    transform: translate3d(-14.4%, -4%, 0) scale(0.194) rotate(-25deg);
+  }
+
+  33% {
+    transform: translate3d(-14.4%, -12%, 0) scale(0.194) rotate(20deg);
+  }
+
+  50% {
+    transform: translate3d(-14.4%, -7%, 0) scale(0.194) rotate(-15deg);
+  }
+
+  67% {
+    transform: translate3d(-14.4%, -11%, 0) scale(0.194) rotate(10deg);
+  }
+
+  84% {
+    transform: translate3d(-14.4%, -8%, 0) scale(0.194) rotate(-5deg);
+  }
+
+  to {
+    opacity: 1;
+    transform: translate3d(-14.4%, -9%, 0) scale(0.194) rotate(0);
+  }
+}
+
+@keyframes right-leaf {
+  from {
+    opacity: 0;
+    transform: translate3d(8.7%, -21.5%, 0) scale(0.194) rotate(-8deg);
+  }
+
+  16% {
+    opacity: 1;
+    transform: translate3d(10%, -17.7%, 0) scale(0.194) rotate(7deg);
+  }
+
+  33% {
+    transform: translate3d(9%, -20%, 0) scale(0.194) rotate(-5deg);
+  }
+
+  50% {
+    transform: translate3d(10%, -17.2%, 0) scale(0.194) rotate(4deg);
+  }
+
+  67% {
+    transform: translate3d(9.3%, -19.5%, 0) scale(0.194) rotate(-3deg);
+  }
+
+  84% {
+    transform: translate3d(9.8%, -18.5%, 0) scale(0.194) rotate(1deg);
+  }
+
+  to {
+    opacity: 1;
+    transform: translate3d(9.7%, -19%, 0) scale(0.194) rotate(0);
+  }
+}
+
+@keyframes green-leaf {
+  from {
+    opacity: 0;
+    transform: translate3d(6%, -4%, 0) rotate(-14deg);
+  }
+
+  16% {
+    transform: translate3d(7%, -3.7%, 0) rotate(7deg);
+  }
+
+  33% {
+    opacity: 1;
+    transform: translate3d(7.7%, -3.3%, 0) rotate(-5.6deg);
+  }
+
+  50% {
+    transform: translate3d(8.4%, -3%, 0) rotate(4.4deg);
+  }
+
+  67% {
+    transform: translate3d(9.1%, -3.7%, 0) rotate(-3deg);
+  }
+
+  84% {
+    transform: translate3d(9.8%, -3.3%, 0) rotate(1.4deg);
+  }
+
+  to {
+    opacity: 1;
+    transform: translate3d(10%, -2%, 0) rotate(0);
+  }
+}
+
+@keyframes suitecase {
+  from {
+    transform: translate3d(-3.5%, 0%, 0) scale(0.03);
+  }
+
+  to {
+    transform: translate3d(-2.5%, -18.2%, 0) scale(0.235);
+  }
+}
+
+@keyframes flamingo {
+  from {
+    opacity: 0;
+    transform: translate3d(-88.5%, 88%, 0) rotate(-15deg);
+  }
+
+  16% {
+    opacity: 1;
+  }
+
+  to {
+    opacity: 1;
+    transform: translate3d(-92.5%, -15%, 0) rotate(0);
+  }
+}
+
+@keyframes flamingo-oscillation {
+  from {
+    transform: translate3d(-92.5%, -15%, 0) rotate(0);
+  }
+
+  50% {
+    transform: translate3d(-92.5%, -5%, 0) rotate(-4deg);
+  }
+
+  75% {
+    transform: translate3d(-92.5%, -10%, 0) rotate(-5.0deg);
+  }
+
+  to {
+    transform: translate3d(-92.5%, -15%, 0) rotate(0);
+  }
 }
 
 .result__title {

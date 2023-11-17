@@ -49,6 +49,21 @@
   font-size: 4.8rem;
   line-height: 0.906;
   letter-spacing: -0.04em;
+  visibility: hidden;
+
+  .active & {
+    visibility: visible;
+  }
+
+  .text__word {
+    display: block;
+    overflow: hidden;
+
+    span {
+      display: inline-block;
+      transform: translate3d(0, 105%, 0);
+    }
+  }
 
   @media (min-width: $stop-scaling) {
     font-size: 48px;
@@ -68,6 +83,10 @@
     font-size: 2rem;
     margin-bottom: 1rem;
   }
+}
+
+.game__title--animate.game__title .text__word span {
+  transform: translate3d(0, 5%, 0);
 }
 
 .game__counter {
@@ -114,7 +133,7 @@
   left: 0;
   z-index: 100;
   opacity: 0.5;
-  display: none;
+  // display: none;
 }
 
 .game__button {
