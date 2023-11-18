@@ -36,6 +36,15 @@
   left: 0;
   right: 0;
   z-index: 1;
+
+  .disclaimer ul {
+    opacity: 0;
+
+    .active & {
+      opacity: 1;
+      transition: opacity 0.35s ease-in 0.35s;
+    }
+  }
 }
 
 .screen__footer {
@@ -48,7 +57,7 @@
   z-index: 1;
   transform: translateY(100%);
 
-  .loaded & {
+  .active & {
     transform: translateY(0);
     transition: transform 0.35s cubic-bezier(0, 0, 0, 1);
   }
