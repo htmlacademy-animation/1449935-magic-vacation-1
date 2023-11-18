@@ -317,6 +317,9 @@
   }
 }
 
+$result-btn-transition-duration: 0.35s;
+$result-btn-transition-delay: 1s;
+
 .result__button {
   @include btn-reset;
   display: flex;
@@ -329,6 +332,12 @@
   font-size: 2.4rem;
   line-height: 1.2;
   color: $c-light;
+  opacity: 0;
+
+  .screen--show & {
+    transition: opacity $result-btn-transition-duration ease-in $result-btn-transition-delay;
+    opacity: 1;
+  }
 
   @media (min-width: $stop-scaling) {
     margin: auto auto 10px;
@@ -361,6 +370,13 @@
     width: 4rem;
     height: 4rem;
     color: $c-dark;
+
+    transform: translate3d(78.54%, 0, 0) rotate3d(0, 0, 1, 90deg);
+
+    .screen--show & {
+      transition: transform $result-btn-transition-duration ease-in $result-btn-transition-delay;
+      transform: translate3d(0, 0, 0) rotate3d(0, 0, 1, 0);
+    }
 
     @media (min-width: $stop-scaling) {
       margin-left: 15px;
