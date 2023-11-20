@@ -37,7 +37,7 @@ $appearance-delay: 0.2s;
   display: block;
   width: 4rem;
   height: 4rem;
-  color: $c-dark;
+  color: var(--c-menu-bg);
   border-radius: 50%;
   transition: all 0.35s ease;
 
@@ -74,17 +74,8 @@ $appearance-delay: 0.2s;
 
   &:hover,
   .social-block--active & {
-    color: $c-light;
+    color: var(--c-menu-accent);
     transition-duration: 0.3s;
-
-    &:hover {
-      color: $c-dark;
-    }
-
-    &::before {
-      background-color: $c-purple;
-      border-color: $c-purple;
-    }
 
     &:hover::before {
       width: 112.5%;
@@ -96,11 +87,11 @@ $appearance-delay: 0.2s;
   }
 
   &:focus {
-    color: $c-purple;
+    color: var(--c-menu-accent);
     outline: none;
 
     &::before {
-      border-color: $c-purple;
+      border-color: var(--c-menu-accent);
     }
 
     & + .social-block__list {
@@ -116,8 +107,8 @@ $appearance-delay: 0.2s;
     &::before {
       width: 100%;
       height: 100%;
-      background-color: $c-purple;
-      border-color: $c-purple;
+      background-color: var(--c-menu-accent);
+      border-color: var(--c-menu-accent);
     }
   }
 }
@@ -237,13 +228,13 @@ $appearance-delay: 0.2s;
   }
 
   &:hover {
-    color: $c-purple;
+    color: var(--c-menu-accent);
   }
 
   &:focus {
-    color: $c-purple;
+    color: var(--c-menu-accent);
     background-color: $c-light;
-    border-color: $c-purple;
+    border-color: var(--c-menu-accent);
     outline: none;
   }
 

@@ -293,12 +293,12 @@
 
     &:hover,
     &:focus {
-      color: $c-purple;
+      color: var(--c-menu-accent);
       outline: none;
 
       &::after {
         opacity: 1;
-        background-color: $c-purple;
+        background-color: var(--c-menu-accent);
         transition: transform 0.3s ease;
         transform: scaleX(1);
         transform-origin: left;
