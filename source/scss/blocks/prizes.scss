@@ -149,7 +149,6 @@
     .prizes__icon {
       position: relative;
       left: -5.9rem;
-      bottom: -1.4rem;
       width: 26.8rem;
 
       @media (min-width: $stop-scaling) {
@@ -237,14 +236,26 @@
 }
 
 .prizes__icon {
-  @media (max-width: $tablet) and (orientation: portrait) {
-    margin-right: 3.8rem;
-  }
-
-  img {
+  img, svg {
     display: block;
     width: 100%;
     height: auto;
+  }
+
+  .prizes__icon-mob {
+    display: none;
+  }
+
+  @media (max-width: $tablet) and (orientation: portrait) {
+    margin-right: 3.8rem;
+
+    .prizes__icon-mob {
+      display: block;
+    }
+
+    svg {
+      display: none;
+    }
   }
 }
 

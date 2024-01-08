@@ -195,10 +195,321 @@
           <ul class="prizes__list">
             <li class="prizes__item prizes__item--journeys">
               <div class="prizes__icon">
-                <picture>
-                  <source srcset="img/prize1-mob.svg" media="(orientation: portrait)">
-                  <img src="img/prize1.svg" alt="">
-                </picture>
+                <img class="prizes__icon-mob" src="img/prize1-mob.svg" alt="">
+                <svg viewBox="0 0 350 330" version="1.1" width="350" height="330" opacity="0" xmlns="http://www.w3.org/2000/svg">
+                  <style>
+                    #baloon__basket,
+                    #baloon__ficus {
+                      transform-box: fill-box;
+                    }
+                  </style>
+
+                  <animate id="baloon_entry_animation" attributeName="opacity" from="0" to="1" begin="indefinite" dur="0.3s" fill="freeze" />
+
+                  <!-- baloon -->
+                  <g id="baloon__baloon">
+                    <animate id="baloon_disapear" attributeName="opacity" from="1" to="0" begin="baloon_entry_animation.begin+2.35s"
+                      dur="0.3s" fill="freeze" />
+
+                    <!-- корзина -->
+                    <g id="baloon__basket" transform-box="fill-box" transform-origin="left top">
+                      <animateTransform attributeName="transform" type="scale" values="1 1; 1 0.7; 1 1"
+                        begin="baloon_entry_animation.begin" dur="2s" repeatCount="indefinite" />
+                      <animateTransform attributeName="transform" type="skewX" values="0; 5; 0;" begin="baloon_entry_animation.begin"
+                        dur="2s" repeatCount="indefinite" additive="sum" />
+                      <path
+                        d="m 175.44,249.28 h 48.36 a 13.27,13.27 0 0 0 13,-10.65 l 3.74,-18.32 h -68.18 v 25.89 a 3.09,3.09 0 0 0 3.08,3.08 z"
+                        fill="none" stroke="#ffffff" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" />
+                      <path d="m 235.79,241.69 h -9.22 a 8.31,8.31 0 0 1 -8.28,-8.31 v -13.07" fill="none" stroke="#ffffff"
+                        stroke-linecap="round" stroke-miterlimit="10" stroke-width="2" />
+                      <path
+                        d="m 204.25,231.88 h -2.05 a 3.45,3.45 0 0 0 -3.43,3.45 v 2.92 a 3.45,3.45 0 0 0 3.43,3.45 h 2.05 a 3.45,3.45 0 0 0 3.43,-3.45 v -2.92 a 3.44,3.44 0 0 0 -3.43,-3.45 z"
+                        fill="none" stroke="#ffffff" stroke-linecap="round" stroke-linejoin="round" stroke-width="2">
+                        <set attributeName="visibility" from="visible" to="hidden" begin="baloon_entry_animation.begin+2s"
+                          id="baloon__window_disapear" />
+                      </path>
+                      <path
+                        d="m 185.64,231.88 h -2.05 a 3.45,3.45 0 0 0 -3.43,3.45 v 2.92 a 3.45,3.45 0 0 0 3.43,3.45 h 2.05 a 3.45,3.45 0 0 0 3.43,-3.45 v -2.92 a 3.45,3.45 0 0 0 -3.43,-3.45 z"
+                        fill="none" stroke="#ffffff" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" />
+                    </g>
+
+                    <g id="baloon__bottom_tail_2" transform="translate(0,4)">
+                      <animateTransform attributeName="transform" type="translate" values="0 3; 0 -2; 0 3"
+                        begin="baloon_entry_animation.begin" dur="2s" repeatCount="indefinite" />
+                      <path
+                        d="m 123.23,207.39 h 9.16 a 3.29,3.29 0 0 0 3.29,-3.3 v -5.71 a 3.29,3.29 0 0 0 -3.29,-3.3 h -16.82 a 1.32,1.32 0 0 0 -1.32,1.32 v 2 a 9,9 0 0 0 9,9"
+                        fill="#068e4d" />
+                      <path
+                        d="m 123.23,207.39 h 9.16 a 3.29,3.29 0 0 0 3.29,-3.3 v -5.71 a 3.29,3.29 0 0 0 -3.29,-3.3 h -16.82 a 1.32,1.32 0 0 0 -1.32,1.32 v 2 a 9,9 0 0 0 8.98,8.99 z"
+                        fill="none" stroke="#ffffff" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" />
+                    </g>
+                    <g id="baloon__top_tail_2" transform="translate(0,4)">
+                      <animateTransform attributeName="transform" type="translate" values="0 3; 0 -2; 0 3"
+                        begin="baloon_entry_animation.begin" dur="2s" repeatCount="indefinite" />
+                      <path
+                        d="m 123.23,173.34 h 9.16 a 3.29,3.29 0 0 1 3.29,3.3 v 5.71 a 3.29,3.29 0 0 1 -3.29,3.3 h -16.82 a 1.32,1.32 0 0 1 -1.32,-1.32 v -2 a 9,9 0 0 1 9,-9"
+                        fill="#068e4d" />
+                      <path
+                        d="m 123.23,173.34 h 9.16 a 3.29,3.29 0 0 1 3.29,3.3 v 5.71 a 3.29,3.29 0 0 1 -3.29,3.3 h -16.82 a 1.32,1.32 0 0 1 -1.32,-1.32 v -2 a 9,9 0 0 1 8.98,-8.99 z"
+                        fill="none" stroke="#ffffff" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" />
+                    </g>
+                    <g id="baloon__hull">
+                      <path
+                        d="m 205,227.08 c 43.38,0 74.86,-15.55 74.86,-37 0,-21.45 -31.48,-37 -74.86,-37 -27.94,0 -55.36,13.53 -73.46,24.87 a 14.3,14.3 0 0 0 0,24.21 c 18.09,11.33 45.52,24.87 73.46,24.87"
+                        fill="#068e4d" />
+                      <path
+                        d="m 205,227.08 c 43.38,0 74.86,-15.55 74.86,-37 0,-21.45 -31.48,-37 -74.86,-37 -27.94,0 -55.36,13.53 -73.46,24.87 a 14.3,14.3 0 0 0 0,24.21 c 18.09,11.38 45.52,24.92 73.46,24.92 z"
+                        fill="none" stroke="#ffffff" stroke-width="2" />
+                      <path
+                        d="m 126.11,190.43 c -0.16616,-4.62132 2.14832,-8.97956 6.07,-11.43 16.74,-10.5 44.58,-24.68 72.81,-24.68 44.81,0 73.64,16 73.64,35.75 v 0.37"
+                        fill="#36e69a" />
+                      <path
+                        d="m 132.18,195.12 c 16.74,4.27 44.58,10 72.81,10 44.14,0 72.75,-6.32 73.6,-14.18 -0.86,19.34 -29.45,34.86 -73.6,34.86 -28.23,0 -56.07,-14.19 -72.81,-24.68 a 12.88,12.88 0 0 1 -6,-10.18 c 0.26,1.61 2.26,3.18 6,4.14"
+                        fill="#068e4d" />
+                      <path fill="#25b774">
+                        <animate attributeName="d" begin="baloon_entry_animation.begin" dur="2s" repeatCount="indefinite"
+                          values="
+                                        M 132.18 186.12 C 148.92 181.85 176.76 176.12 204.99 176.12 C 227.255 176.12 245.57 177.727 258.363 180.329 C 271.155 182.93 278.425 186.525 278.6 190.5 C 278.6 190.67 278.6 190.84 278.6 191.01 C 277.75 198.87 249.15 205.18 205 205.18 C 176.77 205.18 148.93 199.42 132.19 195.18 C 128.4 194.18 126.4 192.65 126.19 191.05 L 126.19 190.54 C 126.32 188.85 128.34 187.18 132.29 186.17;
+                                        M 132.83 187.291 C 146.645 186.306 181.242 183.91 204.964 183.887 C 226.297 183.867 244.393 183.517 256.915 184.18 C 269.609 184.853 277.44 186.619 278.47 190.525 C 278.506 190.691 278.542 190.857 278.578 191.023 C 279.348 198.325 252.031 212.836 205.021 212.938 C 174.655 213.004 147.687 203.638 131.22 196.21 C 127.601 194.535 125.915 192.629 126.014 191.023 L 126.112 190.523 C 126.567 188.884 128.876 187.652 132.929 187.36;
+                                        M 132.18 186.12 C 148.92 181.85 176.76 176.12 204.99 176.12 C 227.255 176.12 245.57 177.727 258.363 180.329 C 271.155 182.93 278.425 186.525 278.6 190.5 C 278.6 190.67 278.6 190.84 278.6 191.01 C 277.75 198.87 249.15 205.18 205 205.18 C 176.77 205.18 148.93 199.42 132.19 195.18 C 128.4 194.18 126.4 192.65 126.19 191.05 L 126.19 190.54 C 126.32 188.85 128.34 187.18 132.29 186.17" />
+                      </path>
+                    </g>
+                    <g id="baloon__bottom_tail_1">
+                      <animateTransform attributeName="transform" type="translate" values="0 -1; 0 4; 0 -1"
+                        begin="baloon_entry_animation.begin" dur="2s" repeatCount="indefinite" />
+                      <path
+                        d="m 123.23,207.39 h 9.16 a 3.29,3.29 0 0 0 3.29,-3.3 v -5.71 a 3.29,3.29 0 0 0 -3.29,-3.3 h -16.82 a 1.32,1.32 0 0 0 -1.32,1.32 v 2 a 9,9 0 0 0 9,9"
+                        fill="#068e4d" />
+                      <path
+                        d="m 123.23,207.39 h 9.16 a 3.29,3.29 0 0 0 3.29,-3.3 v -5.71 a 3.29,3.29 0 0 0 -3.29,-3.3 h -16.82 a 1.32,1.32 0 0 0 -1.32,1.32 v 2 a 9,9 0 0 0 8.98,8.99 z"
+                        fill="none" stroke="#ffffff" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" />
+                    </g>
+                    <g id="baloon__top_tail_1">
+                      <animateTransform attributeName="transform" type="translate" values="0 -1; 0 4; 0 -1"
+                        begin="baloon_entry_animation.begin" dur="2s" repeatCount="indefinite" />
+                      <path
+                        d="m 123.23,173.34 h 9.16 a 3.29,3.29 0 0 1 3.29,3.3 v 5.71 a 3.29,3.29 0 0 1 -3.29,3.3 h -16.82 a 1.32,1.32 0 0 1 -1.32,-1.32 v -2 a 9,9 0 0 1 9,-9"
+                        fill="#068e4d" />
+                      <path
+                        d="m 123.23,173.34 h 9.16 a 3.29,3.29 0 0 1 3.29,3.3 v 5.71 a 3.29,3.29 0 0 1 -3.29,3.3 h -16.82 a 1.32,1.32 0 0 1 -1.32,-1.32 v -2 a 9,9 0 0 1 8.98,-8.99 z"
+                        fill="none" stroke="#ffffff" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" />
+                    </g>
+
+                    <g id="baloon__wind-behind-group">
+                      <line x1="106.25" y1="179.49001" x2="84.050003" y2="179.49001" fill="none" stroke="#ffffff" stroke-linecap="round"
+                        stroke-miterlimit="10" stroke-width="2" id="line20" transform-origin="107.25 0">
+                        <animateTransform attributeName="transform" type="scale" values="1 1; 0.8 1; 1 1; 0.9 1; 1 1"
+                          begin="baloon_entry_animation.begin" dur="0.4s" repeatCount="indefinite" />
+                      </line>
+
+                      <line x1="106.25" y1="190.98" x2="68.769997" y2="190.98" fill="none" stroke="#ffffff" stroke-linecap="round"
+                        stroke-miterlimit="10" stroke-width="2" transform-origin="107.25 0">
+                        <animateTransform attributeName="transform" type="scale" values="1 1; 0.97 1; 1 1; 0.93 1; 1 1"
+                          begin="baloon_entry_animation.begin" dur="0.35s" repeatCount="indefinite" />
+                      </line>
+
+                      <line x1="106.25" y1="201.23" x2="84.050003" y2="201.23" fill="none" stroke="#ffffff" stroke-linecap="round"
+                        stroke-miterlimit="10" stroke-width="2" transform-origin="107.25 0">
+                        <animateTransform attributeName="transform" type="scale" values="0.8 1; 1 1; 0.9 1; 1 1; 0.8 1"
+                          begin="baloon_entry_animation.begin" dur="0.4s" repeatCount="indefinite" />
+                      </line>
+                    </g>
+                  </g>
+
+                  <!-- облака -->
+                  <g id="baloon__cloud_1">
+                    <animate attributeName="opacity" values="0; 1; 1; 0" keyTimes="0; 0.2; 0.8; 1" begin="baloon_entry_animation.begin"
+                      dur="2s" fill="freeze" />
+                    <line x1="68.949997" y1="107.8" x2="131.86" y2="107.8" fill="none" stroke="#ffffff" stroke-linecap="round"
+                      stroke-miterlimit="10" stroke-width="2">
+                      <animateTransform attributeName="transform" type="translate" values="216, 0; 0, 0"
+                        begin="baloon_entry_animation.begin" dur="2s" fill="freeze" />
+                    </line>
+                    <g>
+                      <path d="m 41.77,97.54 h 35.29 a 12.4,12.4 0 1 1 24.8,0 h 17.93" fill="none" stroke="#ffffff"
+                        stroke-linecap="round" stroke-miterlimit="10" stroke-width="2" />
+                      <animateTransform attributeName="transform" type="translate" values="224, 0; 0, 0"
+                        begin="baloon_entry_animation.begin" dur="2s" fill="freeze" />
+                    </g>
+                  </g>
+
+                  <g id="baloon__cloud_2" visibility="hidden">
+                    <animate id="baloon__cloud2_anim" attributeName="opacity" values="0; 1; 1; 0" keyTimes="0; 0.3; 0.7; 1"
+                      begin="baloon_entry_animation.begin+1.8s" dur="1.35s" fill="freeze" />
+                    <set attributeName="visibility" from="hidden" to="visible" begin="baloon__cloud2_anim.begin" />
+                    <line x1="258.95999" y1="93.190002" x2="298.73999" y2="93.190002" fill="none" stroke="#ffffff"
+                      stroke-linecap="round" stroke-miterlimit="10" stroke-width="2">
+                      <animateTransform attributeName="transform" type="translate" values="30, 0; -160, 0"
+                        begin="baloon__cloud2_anim.begin" dur="2s" repeatCount="indefinite" />
+                    </line>
+                    <g>
+                      <animateTransform attributeName="transform" type="translate" values="35, 0; -170, 0"
+                        begin="baloon__cloud2_anim.begin" dur="2s" repeatCount="indefinite" />
+                      <path d="m 278.75,82.91 h -27.36 a 12.4,12.4 0 1 0 -24.8,0 h -17.94" fill="none" stroke="#ffffff"
+                        stroke-linecap="round" stroke-miterlimit="10" stroke-width="2" />
+                      <line x1="287.01001" y1="82.910004" x2="309.20999" y2="82.910004" fill="none" stroke="#ffffff"
+                        stroke-linecap="round" stroke-miterlimit="10" stroke-width="2" />
+                    </g>
+                  </g>
+
+                  <!-- Горы -->
+                  <g id="baloon__mountains-group">
+                    <path
+                      d="m 289.94,327.88 h -45.06 l -32.08,-31.3 a 1.89,1.89 0 0 0 -2.44,0 l -10.2,10.23 a 1.72,1.72 0 0 1 -2.25,0 l -19,-20.17 a 2.4,2.4 0 0 0 -3.1,0 l -26.42,25.64 a 1.71,1.71 0 0 1 -2.25,0 l -2.63,-2.92 a 1.71,1.71 0 0 0 -2.31,0 L 124.63,329 H 80.78"
+                      fill="none" stroke="#ffffff" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"
+                      id="baloon__mountains">
+                      <animate attributeName="d" begin="baloon_entry_animation.begin+2.5s" dur="0.25s" fill="freeze"
+                        from="M 289.94 327.88 L 244.88 327.88 L 212.8 296.58 C 212.459 296.292 212.027 296.134 211.58 296.134 C 211.133 296.134 210.701 296.292 210.36 296.58 L 200.16 306.81 C 199.848 307.08 199.448 307.229 199.035 307.229 C 198.622 307.229 198.222 307.08 197.91 306.81 L 178.91 286.64 C 178.477 286.274 177.927 286.072 177.36 286.072 C 176.793 286.072 176.243 286.274 175.81 286.64 L 149.39 312.28 C 149.079 312.552 148.679 312.702 148.265 312.702 C 147.851 312.702 147.451 312.552 147.14 312.28 L 144.51 309.36 C 144.195 309.071 143.782 308.911 143.355 308.911 C 142.928 308.911 142.515 309.071 142.2 309.36 L 124.63 329 L 80.78 329"
+                        to="M 289.94 329 L 244.88 329 L 212.8 329 C 212.393 329 211.987 329 211.58 329 C 211.173 329 210.767 329 210.36 329 L 200.16 329 C 199.41 329 198.66 329 197.91 329 C 191.577 329 185.243 329 178.91 329 L 178.135 329 C 177.877 329 177.618 329 177.36 329 C 177.102 329 176.843 329 176.585 329 L 175.81 329 C 167.003 329 158.197 329 149.39 329 C 148.64 329 147.89 329 147.14 329 L 144.51 329 C 144.125 329 143.74 329 143.355 329 C 142.97 329 142.585 329 142.2 329 L 124.63 329 L 80.78 329" />
+                    </path>
+                    <path
+                      d="m 289.94,328 h -89.79 c -0.86,0 -1.56,0 -2.25,0 h -19 c -1.5,0 -2.23,0 -3.1,0 h -32.3 c -1.09,0 -1.66,0 -2.31,0 H 80.78"
+                      fill="none" stroke="#ffffff" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2" id="baloon__flat" />
+                  </g>
+
+                  <!-- иллюминатор переход -->
+                  <path
+                    d="m 204.25,231.88 h -2.05 a 3.45,3.45 0 0 0 -3.43,3.45 v 2.92 a 3.45,3.45 0 0 0 3.43,3.45 h 2.05 a 3.45,3.45 0 0 0 3.43,-3.45 v -2.92 a 3.44,3.44 0 0 0 -3.43,-3.45 z"
+                    fill="none" stroke="#ffffff" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" visibility="hidden">
+                    <set attributeName="visibility" from="hidden" to="visible" begin="baloon__window_disapear.begin" />
+
+                    <animate attributeName="d" begin="baloon__window_disapear.begin" dur="0.35s" fill="freeze"
+                      from="M 206.677 240.682 C 207.319 240.036 207.68 239.161 207.68 238.25 C 207.68 237.277 207.68 236.303 207.68 235.33 C 207.682 234.726 207.525 234.132 207.224 233.609 C 206.924 233.085 206.491 232.649 205.969 232.346 C 205.447 232.042 204.854 231.882 204.25 231.88 C 204.25 231.88 204.25 231.88 204.25 231.88 L 202.2 231.88 C 201.289 231.885 200.416 232.251 199.773 232.898 C 199.131 233.544 198.77 234.419 198.77 235.33 L 198.77 238.25 C 198.77 239.161 199.131 240.036 199.773 240.682 C 200.416 241.329 201.289 241.695 202.2 241.7 C 202.883 241.7 203.567 241.7 204.25 241.7 C 205.161 241.695 206.034 241.329 206.677 240.682"
+                      to="M 275 225.43 C 269.29 225.43 263.58 225.43 257.87 225.43 C 253.221 225.409 248.765 223.547 245.484 220.254 C 242.202 216.961 240.355 212.499 240.35 207.85 C 240.35 195.233 240.35 182.617 240.35 170 C 240.355 165.351 242.202 160.889 245.484 157.596 C 248.765 154.303 253.221 152.441 257.87 152.42 L 275 152.42 C 279.647 152.444 284.1 154.307 287.38 157.6 C 290.659 160.892 292.505 165.353 292.51 170 L 292.51 188.915 C 292.51 195.22 292.51 201.525 292.51 207.83 C 292.507 212.48 290.663 216.944 287.384 220.24 C 284.105 223.537 279.65 225.404 275 225.43 C 275 225.43 275 225.43 275 225.43" />
+
+                    <set attributeName="visibility" from="visible" to="hidden" begin="baloon__window_disapear.end" />
+                  </path>
+
+                  <path
+                    d="M 275,225.43 H 257.87 A 17.6,17.6 0 0 1 240.35,207.85 V 170 a 17.6,17.6 0 0 1 17.52,-17.58 H 275 A 17.6,17.6 0 0 1 292.51,170 v 37.83 A 17.61,17.61 0 0 1 275,225.43 Z"
+                    fill="none" id="baloon__window-path" />
+
+                  <clipPath id="baloon__window-clip">
+                    <use href="#baloon__window-path" />
+                  </clipPath>
+
+                  <!-- иллюминатор -->
+                  <g id="baloon__window" visibility="hidden">
+                    <set id="baloon__window-appearance" attributeName="visibility" from="hidden" to="visible"
+                      begin="baloon__window_disapear.begin+0.35s" />
+
+                    <!-- сам иллюминатор -->
+                    <use href="#baloon__window-path" stroke="#ffffff" stroke-width="2" />
+
+                    <!-- облака внутри иллюминатора -->
+                    <g clip-path="url(#baloon__window-clip)" id="baloon__clouds-inside">
+                      <g>
+                        <animateTransform attributeName="transform" type="translate" values="294 160; -30, 160"
+                          begin="baloon__window_disapear.begin+0.35s" dur="3s" repeatCount="indefinite" />
+                        <line x1="28.18" y1="38.34" x2="91.089996" y2="38.34" fill="none" stroke="#ffffff" stroke-linecap="round"
+                          stroke-miterlimit="10" stroke-width="2" />
+                        <path d="m 41.77,97.54 h 35.29 a 12.4,12.4 0 1 1 24.8,0 h 17.93" transform="translate(-40.77,-69.46)"
+                          fill="none" stroke="#ffffff" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2" />
+                        <line x1="218.19" y1="23.719999" x2="257.97" y2="23.719999" fill="none" stroke="#ffffff" stroke-linecap="round"
+                          stroke-miterlimit="10" stroke-width="2" />
+                        <path d="m 278.75,82.91 h -27.36 a 12.4,12.4 0 1 0 -24.8,0 h -17.94" transform="translate(-40.77,-69.46)"
+                          fill="none" stroke="#ffffff" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2" />
+                        <line x1="246.24001" y1="13.45" x2="268.42999" y2="13.45" fill="none" stroke="#ffffff" stroke-linecap="round"
+                          stroke-miterlimit="10" stroke-width="2" />
+                      </g>
+                    </g>
+                  </g>
+
+                  <!-- лыжи -->
+                  <g id="baloon__skis" transform="translate(-50,0)" opacity="0">
+                    <animate attributeName="opacity" id="baloon__skis_appearance" from="0" to="1" dur="0.3s" fill="freeze"
+                      begin="baloon__chair_appearance.begin+0.2s" />
+                    <animateTransform attributeName="transform" type="translate" values="-50 0; 0 0" keySplines="0.3 0.3 .5 1"
+                      begin="baloon__skis_appearance.begin" dur="0.3s" fill="freeze" />
+                    <path
+                      d="m 91.14,327.79 a 2.2,2.2 0 0 1 -2,-2.36 L 102.8,132.26 c 1.1,-15.49 -4.8,-21.92 -8.75,-24.47 a 1.35,1.35 0 0 1 0.53,-2.45 C 103,104 122.18,104 120,134.19 l -13.57,192.48 a 2.2,2.2 0 0 1 -2.35,2 z"
+                      fill="#ffffff" />
+                    <path
+                      d="m 124.5,328.17 a 2.2,2.2 0 0 1 -2.17,-2.23 l 2.24,-193.63 c 0.19,-15.53 -6.07,-21.61 -10.16,-23.91 a 1.35,1.35 0 0 1 0.39,-2.47 c 8.36,-1.9 27.49,-3 27.15,27.28 l -2.25,192.93 a 2.2,2.2 0 0 1 -2.22,2.18 z"
+                      fill="#ffffff" />
+                  </g>
+
+                  <!-- кресло -->
+                  <g id="baloon__chair" transform="translate(-180,0)" opacity="0">
+                    <animate attributeName="opacity" id="baloon__chair_appearance" from="0" to="1"
+                      begin="baloon_entry_animation.begin+2.5s" dur="0.3s" fill="freeze" />
+                    <animateTransform attributeName="transform" type="translate" values="-180 0; 0 0" keySplines="0.3 0.3 .5 1"
+                      begin="baloon__chair_appearance.begin" dur="0.3s" fill="freeze" />
+                    <path d="m 257.5,259.82 h -60.74 v -14.19 h 55.09 a 9.92,9.92 0 0 1 9.9,9.93 4.26,4.26 0 0 1 -4.25,4.25"
+                      fill="#a67ee5" />
+                    <path d="m 257.5,259.82 h -60.74 v -14.19 h 55.09 a 9.92,9.92 0 0 1 9.9,9.93 4.26,4.26 0 0 1 -4.25,4.26 z"
+                      fill="none" stroke="#ffffff" stroke-miterlimit="10" stroke-width="2" />
+                    <polygon points="165.19,286.72 179.16,286.72 185.47,328.31 171.5,328.31 " fill="#a67ee5" />
+                    <polygon points="165.19,286.72 179.16,286.72 185.47,328.31 171.5,328.31 " fill="none" stroke="#ffffff"
+                      stroke-miterlimit="10" stroke-width="2" />
+                    <polygon points="214.76,286.72 228.72,286.72 235.03,328.31 221.06,328.31 " fill="#a67ee5" />
+                    <polygon points="214.76,286.72 228.72,286.72 235.03,328.31 221.06,328.31 " fill="none" stroke="#ffffff"
+                      stroke-miterlimit="10" stroke-width="2" />
+                    <path
+                      d="m 281.33,272.45 h -55.89 a 5.59,5.59 0 0 1 -5.53,-4.77 l -10.86,-72.24 a 17.71,17.71 0 0 0 -12.49,-31.31 h -55.08 l -0.32,102.87 15.77,23.35 47.19,8.39 a 12.3,12.3 0 0 0 4.22,0.75 h 73 a 13.53,13.53 0 0 0 0,-27.06"
+                      fill="#a67ee5" />
+                    <path
+                      d="m 281.33,272.45 h -55.89 a 5.59,5.59 0 0 1 -5.53,-4.77 l -10.86,-72.24 a 17.71,17.71 0 0 0 -12.49,-31.31 h -55.08 l -0.32,102.87 15.77,23.35 47.19,8.39 a 12.3,12.3 0 0 0 4.22,0.75 h 73 a 13.53,13.53 0 0 0 -0.01,-27.04 z"
+                      fill="none" stroke="#ffffff" stroke-miterlimit="10" stroke-width="2" />
+                    <path
+                      d="m 162.42,267.69 -10.86,-72.24 a 17.71,17.71 0 1 0 -29,-13.61 18,18 0 0 0 0.79,5.25 L 138.65,289 a 12.36,12.36 0 0 0 12.21,10.54 h 73 a 13.53,13.53 0 0 0 0,-27.05 h -55.91 a 5.62,5.62 0 0 1 -5.53,-4.78"
+                      fill="#a67ee5" />
+                    <path
+                      d="m 162.42,267.69 -10.86,-72.24 a 17.71,17.71 0 1 0 -29,-13.61 18,18 0 0 0 0.79,5.25 L 138.65,289 a 12.36,12.36 0 0 0 12.21,10.54 h 73 a 13.53,13.53 0 0 0 0,-27.05 h -55.91 a 5.62,5.62 0 0 1 -5.53,-4.8 z"
+                      fill="none" stroke="#ffffff" stroke-miterlimit="10" stroke-width="2" />
+                    <path d="m 206.26,259.82 h -72 l -2.13,-14.19 h 68.47 a 9.92,9.92 0 0 1 9.9,9.93 4.26,4.26 0 0 1 -4.25,4.25"
+                      fill="#a67ee5" />
+                    <path d="m 206.26,259.82 h -72 l -2.13,-14.19 h 68.47 a 9.92,9.92 0 0 1 9.9,9.93 4.26,4.26 0 0 1 -4.24,4.26 z"
+                      fill="none" stroke="#ffffff" stroke-miterlimit="10" stroke-width="2" />
+                    <line x1="151.57001" y1="195.44" x2="209.05" y2="195.44" fill="none" stroke="#ffffff" stroke-linecap="round"
+                      stroke-miterlimit="10" stroke-width="2" />
+                  </g>
+
+                  <!-- Растение -->
+                  <g id="baloon__ficus" transform="translate(-50,0)" opacity="0" transform-origin="right bottom">
+                    <animate attributeName="opacity" id="baloon__ficus_appearance" from="0" to="1" dur="0.3s" fill="freeze"
+                      begin="baloon__chair_appearance.begin+0.1s" />
+                    <animateTransform attributeName="transform" type="translate" values="-50 0; 0 0" keySplines="0.3 0.3 .5 1"
+                      begin="baloon__ficus_appearance.begin" dur="0.3s" fill="freeze" />
+                    <animateTransform attributeName="transform" type="rotate" values="0 0 0; 10 0 0; -5 0 0; 2 0 0; 0 0 0"
+                      begin="baloon__ficus_appearance.end" dur="0.5s" fill="freeze" additive="sum" />
+                    <path
+                      d="M 79.18,194 A 131,131 0 0 1 94.77,220.9 255,255 0 0 1 74.69,197.35 259,259 0 0 1 57.62,171.47 131.72,131.72 0 0 1 79.18,194"
+                      fill="#36e69a" />
+                    <path
+                      d="m 80.94,214.39 a 127.19,127.19 0 0 1 22.8,20.49 242.09,242.09 0 0 1 -25.84,-15.71 235.86,235.86 0 0 1 -23.42,-18.7 119.82,119.82 0 0 1 26.46,13.92"
+                      fill="#36e69a" />
+                    <path
+                      d="m 93.66,205.48 a 258.38,258.38 0 0 0 10.08,29.39 125.63,125.63 0 0 0 -4.5,-30.52 135.9,135.9 0 0 0 -12.06,-29.44 260.33,260.33 0 0 0 6.47,30.57"
+                      fill="#36e69a" />
+                    <path
+                      d="m 107.32,213.52 a 250.14,250.14 0 0 0 2.06,30.67 119.93,119.93 0 0 0 3.76,-30.05 131.24,131.24 0 0 0 -4,-31.36 238.1,238.1 0 0 0 -1.87,30.74"
+                      fill="#25b774" />
+                    <path
+                      d="M 83.08,229.56 A 121.93,121.93 0 0 1 109.37,244.2 225.91,225.91 0 0 1 81.21,235 228.11,228.11 0 0 1 54.84,222.31 113.61,113.61 0 0 1 83.09,229.6"
+                      fill="#25b774" />
+                    <path
+                      d="M 88.06,243.83 A 118.11,118.11 0 0 1 115.62,255 211,211 0 0 1 86.84,249.4 220.87,220.87 0 0 1 59.42,240.07 114,114 0 0 1 88.07,243.8"
+                      fill="#25b774" />
+                    <path
+                      d="m 118.71,224.79 a 238,238 0 0 0 -3.1,30.25 117.11,117.11 0 0 0 8.82,-28.54 127.44,127.44 0 0 0 1.42,-31.19 213.92,213.92 0 0 0 -7.15,29.48"
+                      fill="#25b774" />
+                    <path
+                      d="m 98.86,262 a 118.24,118.24 0 0 1 27.07,12.34 212.3,212.3 0 0 1 -28.53,-6.79 220.78,220.78 0 0 1 -27,-10.45 114.06,114.06 0 0 1 28.46,4.9"
+                      fill="#068e4d" />
+                    <path
+                      d="m 130.27,244.29 a 236.56,236.56 0 0 0 -4.34,30.1 116.94,116.94 0 0 0 10,-28.16 127.42,127.42 0 0 0 2.71,-31.1 214.43,214.43 0 0 0 -8.36,29.16"
+                      fill="#068e4d" />
+                    <path
+                      d="m 108.9,280.69 a 118.21,118.21 0 0 1 26.54,13.47 213.62,213.62 0 0 1 -28.23,-8 221.65,221.65 0 0 1 -26.55,-11.57 113.82,113.82 0 0 1 28.24,6.08"
+                      fill="#068e4d" />
+                    <path
+                      d="m 141,264.26 a 236.09,236.09 0 0 0 -5.58,29.9 117.46,117.46 0 0 0 11.15,-27.73 127.2,127.2 0 0 0 4,-31 214.24,214.24 0 0 0 -9.57,28.83"
+                      fill="#068e4d" />
+                    <path d="M 92.62,217.67 A 529.26,529.26 0 0 1 149.48,328" fill="none" stroke="#36e69a" stroke-linecap="round"
+                      stroke-linejoin="round" stroke-width="2" />
+                  </g>
+                </svg>
               </div>
               <p class="prizes__desc">
                 <b>3</b>
