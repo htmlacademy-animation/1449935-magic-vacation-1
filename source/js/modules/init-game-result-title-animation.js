@@ -99,7 +99,7 @@ export const initGameLooseTitleAnimation = (root, animationId, options) => {
           -2.16 0;
           -2.16 109.24;
           -2.16 100;
-          -2.16 109.24;
+          -2.16 109.24
         "
         begin="${animationId}.begin+${delayVal}s"
         dur="${animationDuration}"
@@ -113,7 +113,7 @@ export const initGameLooseTitleAnimation = (root, animationId, options) => {
         keySplines="
           0.32 0 0.67 0;
           0.27 0.9 0.82 1;
-          0.27 0.1 1 0.82;
+          0.27 0.1 1 0.82
         "
         fill="freeze"
       />
