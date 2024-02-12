@@ -42,17 +42,15 @@ export const initLetterPathAnimation = (letter, masterAnimationId, options) => {
 export const initGameWinTitleAnimation = (root, animationId, options) => {
   const {animationDuration, animationClass} = options;
 
-  const zoomAnimation = `
-    <animateTransform
+  const masterAnimation = `
+    <animate
       id="${animationId}"
       class=${animationClass}
-      attributeName="transform" type="scale" values="1.2 1.2; 1 1"
-      dur="${animationDuration}"
       begin="indefinite"
     />
   `;
 
-  root.insertAdjacentHTML(`afterbegin`, zoomAnimation);
+  root.insertAdjacentHTML(`afterbegin`, masterAnimation);
 
   const letters = root.querySelectorAll(`path`);
 
@@ -75,7 +73,6 @@ export const initGameLooseTitleAnimation = (root, animationId, options) => {
     <animate
       id="${animationId}"
       class=${animationClass}
-      dur="${animationDuration}"
       begin="indefinite"
     />
   `;
