@@ -1,6 +1,6 @@
 import {LetterByLetterAnimation} from "./letter-by-letter-animation";
 import {setupPageTitleAnimation} from './setup-page-title-animation';
-import {Countup} from './CountUp';
+import {Countup} from './countup';
 
 export default () => {
   const titleAnimation = new LetterByLetterAnimation(
