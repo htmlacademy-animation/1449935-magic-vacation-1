@@ -370,3 +370,100 @@
     }
   }
 }
+
+// Анимация призов и цифр
+
+@mixin description-shift($delay, $translateEnd: 0) {
+  span {
+    opacity: 0;
+    transform: translateX(2em);
+
+    .active & {
+      transition-property: opacity, transform;
+      transition-duration: 0.35s;
+      transition-delay: $delay;
+      transition-timing-function: linear, ease-out;
+      opacity: 1;
+      transform: translateX($translateEnd);
+    }
+  }
+}
+
+.prizes__item--journeys {
+  transform: translateX(120%);
+
+  .active & {
+    transition: transform 0.35s ease-in-out 3.85s;
+    transform: translateX(0);
+  }
+
+  .prizes__desc {
+    b {
+      opacity: 0;
+
+      .active & {
+        transition: opacity 0.25s linear 3.25s;
+        opacity: 1;
+      }
+    }
+
+    @include description-shift(3.5s);
+  }
+}
+
+.prizes__item--cases {
+  opacity: 0;
+
+  .active & {
+    transition: opacity 0.2s linear 4s;
+    opacity: 1;
+  }
+
+  @media (max-width: 1024px) {
+    transform: translateX(120%);
+
+    .active & {
+      transition: transform 0.35s ease-in-out 4.65s;
+      transform: translateX(0);
+    }
+  }
+
+  .prizes__desc {
+    b {
+      opacity: 0;
+      min-width: 0.5469825413em;
+
+      .active & {
+        transition: opacity 0s step-end 5s;
+        opacity: 1;
+      }
+    }
+
+    @include description-shift(5s, -0.5em);
+  }
+}
+
+.prizes__item--codes {
+  @media (max-width: 1024px) {
+    transform: translateX(120%);
+
+    .active & {
+      transition: transform 0.35s ease-in-out 5.65s;
+      transform: translateX(0);
+    }
+  }
+
+  .prizes__desc {
+    b {
+      opacity: 0;
+      min-width: 1.64095575912397em;
+
+      .active & {
+        transition: opacity 0s step-end 6.5s;
+        opacity: 1;
+      }
+    }
+
+    @include description-shift(6.5s);
+  }
+}
